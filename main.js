@@ -54,6 +54,7 @@ const productList = [
     ml: 100,
   },
 ]
+
 let carritoCompras = {}
 let carritoTotal = 0
 const total = document.getElementById('total')
@@ -62,21 +63,25 @@ const form = document.getElementById('form')
 const reset = document.getElementById('reset')
 
 reset.addEventListener('click', (e) => {
-    buildProductList(productList)
+  buildProductList(productList)
 })
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
+  let i = 0;
   const searchInput = event.target.search.value.toUpperCase()
   const ProductListFilter = productList.filter((product) => {
     if (searchInput == product.nombre.toUpperCase()) {
       return product
     }
   })
-
-  return buildProductList(ProductListFilter)
-
-//   console.log(ProductListFilter)
+  
+  if (ProductListFilter.length == 0) {
+    alert("No existe en inventory");
+  }
+  else {
+    return buildProductList(ProductListFilter)
+  }
 })
 
 const comprar = (nombre, precio, id) => {
