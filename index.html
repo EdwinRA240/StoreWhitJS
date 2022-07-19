@@ -10,10 +10,31 @@
 <body>
     <header>
         <h1>Product List</h1>
+        <h3 id="total">Total: <span>$ 0</span></h3>
+        <form id="form">
+            <input type="text" id="search" placeholder="Search" name="search">
+            <input type="submit" value="Search">
+        </form> 
+
+        <button id="reset">Reset</button>
     </header>
     <main id="productList">
         
     </main>
+    <footer>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tableProducts">
+
+            </tbody>
+        </table>
+    </footer>
 <script src="main.js"></script>    
 </body>
 </html>
