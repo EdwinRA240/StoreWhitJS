@@ -1,6 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(251, 186, 108);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+}
+
+.marca img {
+    width: 70px;
+    height: 70px;
+}
+
+.marca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 #productList {
     display: flex;
 }
+
 .product {
     padding: 10px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+
 }

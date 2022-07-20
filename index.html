@@ -10,19 +10,23 @@
 </head>
 
 <body>
+
     <header>
-        <h1>Product List</h1>
-        <h3 id="total">Total: <span>$ 0</span></h3>
+        <div class="marca">
+            <img src="./src/burro.png" alt="LOGO">
+            <h1>BurroShop</h1>
+        </div>
         <form id="form">
             <input type="text" id="search" placeholder="Search" name="search">
             <input type="submit" value="Search">
         </form>
-
         <button id="reset">Reset</button>
     </header>
-    <main id="productList">
 
+    <main id="productList">
     </main>
+
+    
     <footer>
         <table>
             <thead>
@@ -33,10 +37,12 @@
                 </tr>
             </thead>
             <tbody id="tableProducts">
-
+                
             </tbody>
         </table>
+        <h3 id="total">Total: <span>$ 0</span></h3>
     </footer>
+
     <script src="main.js"></script>
 </body>
 
