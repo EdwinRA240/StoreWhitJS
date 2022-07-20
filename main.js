@@ -28,7 +28,7 @@ const productList = [
   },
   {
     id: 4,
-    nombre: 'Boing de Mango',
+    nombre: 'Boing',
     precio: 15,
     cantidad: 1,
     descripcion: 'Jugo de fruta',
@@ -82,7 +82,7 @@ const productList = [
   },
   {
     id: 4,
-    nombre: 'Boing de Mango',
+    nombre: 'Boing',
     precio: 15,
     cantidad: 1,
     descripcion: 'Jugo de fruta',
@@ -119,11 +119,13 @@ const search = document.getElementById('search')
 
 reset.addEventListener('click', (e) => {
   buildProductList(productList)
+  search.value = ''
 })
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   const searchInput = event.target.search.value.toUpperCase()
+
   const ProductListFilter = productList.filter((product) => {
     if (searchInput == product.nombre.toUpperCase()) {
       return product
@@ -140,7 +142,7 @@ form.addEventListener('submit', (event) => {
 
 search.addEventListener('keyup', (event) => {
   event.preventDefault()
-  console.log(event.target.value.length)
+  console.log(event.target)
   const searchInput = event.target.value.toUpperCase()
 
   const ProductListFilter = productList.filter((product) => {
@@ -197,10 +199,10 @@ const buildProductList = (productList1) => {
     createSection.innerHTML = `
         <img src="${line.imagen}" alt="">
         <h2>${line.nombre}</h2>
-        <h3>Price: <span>$ ${line.precio} </span> </h3>
+        <h4>Price: <span>$${line.precio} </span> </h4>
         <p>Quantity: <span>${line.cantidad}</span> </p>
         <p>Description: <span>${line.descripcion}</span> </p>
-        <p>Ml: <span>${line.ml} </span> </p>
+        <p>mL: <span>${line.ml} </span> </p>
         <button onclick="comprar('${line.nombre}', '${line.precio}', '${line.id}')">Buy </button>
         
         `

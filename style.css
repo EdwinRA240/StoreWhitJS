@@ -4,15 +4,18 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: rgb(251, 186, 108);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 header {
     width: 100%;
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
 }
 
 .marca img {
@@ -26,24 +29,67 @@ header {
     align-items: center;
 }
 
-main {
+header input,
+button {
+    padding: 5px;
+    height: 30px;
+    background-color: bisque;
+}
+
+form {
     margin: 15px;
+}
+
+main {
+    margin: 0px 15px 25px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#productList {
-    display: flex;
-}
-
 .product {
-    padding: 10px;
+    margin: 10px;
 }
 
-img {
+section {
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 5px 10px 5px;
+
+}
+
+section img {
     width: 150px;
     height: 150px;
+}
 
+section h2,
+h3,
+p {
+    text-align: center;
+    width: 100%;
+    margin: 2px;
+}
+
+section button {
+    width: 50%;
+    margin: 5px;
+    background-color: bisque;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+
+footer {
+    width: 100%;
+    padding: 20px 4rem;
+}
+
+footer table {
+    text-align: center;
+    margin: 5px 0px;
 }
