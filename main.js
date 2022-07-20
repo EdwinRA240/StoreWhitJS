@@ -61,6 +61,7 @@ const total = document.getElementById('total')
 const tableProducts = document.getElementById('tableProducts')
 const form = document.getElementById('form')
 const reset = document.getElementById('reset')
+const search = document.getElementById('search')
 
 reset.addEventListener('click', (e) => {
   buildProductList(productList)
@@ -68,20 +69,32 @@ reset.addEventListener('click', (e) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
-  let i = 0;
   const searchInput = event.target.search.value.toUpperCase()
   const ProductListFilter = productList.filter((product) => {
     if (searchInput == product.nombre.toUpperCase()) {
       return product
     }
   })
-  
+
   if (ProductListFilter.length == 0) {
     alert("No existe en inventory");
   }
   else {
     return buildProductList(ProductListFilter)
   }
+})
+
+search.addEventListener('keyup', (event) => {
+  event.preventDefault()
+  console.log(event.target.value.length)
+  const searchInput = event.target.value.toUpperCase()
+
+  const ProductListFilter = productList.filter((product) => {
+    if (searchInput == product.nombre.toUpperCase().substring(0, event.target.value.length)) {
+      return product
+    }
+  })
+  return buildProductList(ProductListFilter)
 })
 
 const comprar = (nombre, precio, id) => {
@@ -120,7 +133,7 @@ const buildProductList = (productList1) => {
 
   getParentElement.innerHTML = ''
 
-  console.log(productList1)
+  // console.log(productList1)
 
   //Loop the product list array in order to generate the <section> </section>
   productList1.forEach((line) => {
