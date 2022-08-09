@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: rgb(251, 186, 108);
+    /* background-color: rgb(231, 158, 69); */
+    background: rgb(255,111,0);
+    background: linear-gradient(0deg, rgba(255,111,0,1) 0%, rgba(253,187,45,1) 90%);
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
